@@ -36,7 +36,7 @@ ffmpeg -re -i test.mp4 -c:v libx264 -c:a aac -f flv rtmp://localhost/live/stream
 
 ### Consuming
 
-MediaMTX is configured to automatically convert incoming streams to hls for web access.
+MediaMTX is configured to automatically convert incoming streams to HLS protocol for web access.
 
 To view the stream, access it in your browser:
 
