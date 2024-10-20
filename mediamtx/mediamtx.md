@@ -1,5 +1,7 @@
 <h1 style="text-align:center">Media MTX</h1>
 
+[MediaMTX](https://github.com/bluenviron/mediamtx) docker compose example.
+
 Command to send a video to stream server using ffmpeg
 
 | parameter                    | description                                                                                                                                                                                 |
@@ -15,4 +17,10 @@ Running the above command on the terminal after the streaming server is configur
 
 ```shell
 ffmpeg -re -i test.mp4 -c:v libx264 -c:a aac -f flv rtmp://localhost/live/stream
+```
+
+MediaMTX automatically converts incoming streams to hls for web access. To view the stream, access it in your browser:
+
+```text
+http://localhost:8888/live/stream/
 ```
