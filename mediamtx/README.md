@@ -1,5 +1,7 @@
 <h1 style="text-align:center">Media MTX</h1>
 
+<center> MediaMTX </center>
+
 [MediaMTX](https://github.com/bluenviron/mediamtx) docker compose example.
 
 # Starting
