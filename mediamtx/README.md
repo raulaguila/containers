@@ -2,7 +2,20 @@
 
 [MediaMTX](https://github.com/bluenviron/mediamtx) docker compose example.
 
-Command to send a video to stream server using ffmpeg
+# Starting
+
+Starting the container:
+
+```shell
+docker compose up -d --build
+```
+
+# Testing
+
+### Encoding
+
+Using FFmpeg to encode and send data to the server. Following is the FFmpeg command to encode and transfer the video to
+the server.
 
 | parameter                    | description                                                                                                                                                                                 |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -19,8 +32,14 @@ Running the above command on the terminal after the streaming server is configur
 ffmpeg -re -i test.mp4 -c:v libx264 -c:a aac -f flv rtmp://localhost/live/stream
 ```
 
-MediaMTX automatically converts incoming streams to hls for web access. To view the stream, access it in your browser:
+### Consuming
+
+MediaMTX is configured to automatically convert incoming streams to hls for web access.
+
+To view the stream, access it in your browser:
 
 ```text
 http://localhost:8888/live/stream/
 ```
+
+Or you can consume it using any other software that consumes the RTMP protocol, such as VLC, OBS...
