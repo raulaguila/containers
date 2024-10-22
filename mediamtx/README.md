@@ -35,6 +35,12 @@ Running the above command on the terminal after the streaming server is configur
 ffmpeg -stream_loop -1 -re -i test.mp4 -c:v libx264 -c:a aac -f flv rtmp://localhost/live/stream
 ```
 
+FFmpeg auto generate a video to stream:
+
+```shell
+ffmpeg -r 100 -f lavfi -i testsrc -vf scale=1920:1080 -vcodec libx264 -profile:v baseline -pix_fmt yuv420p -f flv rtmp://localhost/live/stream
+```
+
 ### Consuming
 
 MediaMTX is configured to automatically convert incoming streams to HLS protocol for web access.
